@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@graphql-hive/gateway": "^1.10.4",
+    "@graphql-mesh/compose-cli": "^1.4.1"
+  }
+}
