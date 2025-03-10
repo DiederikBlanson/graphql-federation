@@ -9,9 +9,17 @@ class GraphController {
     @QueryMapping
     fun user(
         @Argument id: String
-    ): User {
-        return User(id, "User $id")
+    ): User? {
+        return users().find { it.id == id }
     }
+
+    @QueryMapping
+    fun users(): List<User> =
+        listOf(
+            User("1", "Diederik"),
+            User("2", "John"),
+            User("3", "Arnold")
+        )
 }
 
 data class User(val id: String, val name: String)

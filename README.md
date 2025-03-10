@@ -140,3 +140,6 @@ npx hive-gateway supergraph
 ![alt text](/assets/hive-gateway.png)
 7. Navigate to `http://localhost:4000/graphql`. The supergraph is now accessible, and you can query fields from both Service 1 and Service 2:
 ![alt text](/assets/example-query.png)
+
+## Other sources
+- JWT Support https://the-guild.dev/graphql/hive/docs/gateway/authorization-authentication#in-upstream-graphql-subgraphs

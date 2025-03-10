@@ -83,6 +83,7 @@ scalar TransportOptions @join__type(graph: SERVICE_1)  @join__type(graph: SERVIC
 
 type Query @join__type(graph: SERVICE_1)  @join__type(graph: SERVICE_2)  {
   user(id: ID!) : User @join__field(graph: SERVICE_1) 
+  users: [User!]! @join__field(graph: SERVICE_1) 
 }
 
 type User @join__type(graph: SERVICE_1, key: "id")  @join__type(graph: SERVICE_2, key: "id", extension: true)  {

@@ -2,7 +2,7 @@ package com.example.service2
 
 import org.springframework.graphql.data.federation.EntityMapping
 import org.springframework.graphql.data.method.annotation.Argument
-import org.springframework.graphql.data.method.annotation.SchemaMapping
+import org.springframework.graphql.data.method.annotation.BatchMapping
 import org.springframework.stereotype.Controller
 
 @Controller
@@ -15,10 +15,10 @@ class GraphController {
         id = id
     )
 
-    @SchemaMapping(typeName = "User", field = "email")
-    fun email(
-        user: User
-    ): String = "my-custom-email@gmail.com"
+    @BatchMapping(typeName = "User", field = "email")
+    fun emails(users: List<User>): Map<User, String> {
+        return users.associateWith { "user-${it.id}@example.com" }
+    }
 }
 
 data class User (
